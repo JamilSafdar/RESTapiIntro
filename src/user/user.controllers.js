@@ -28,6 +28,15 @@ exports.findUser = async (req, res) => {
 	try {
 		res.status(200).send(req.user);
 	} catch (error) {
-		res.status(500).send(error);
+		res.status(500).send({ message: "Something went wrong, check server logs" });
+	}
+};
+
+exports.deleteUser = async (req, res) => {
+	try {
+		await User.findOneAndDelete(req.params);
+		res.status(200).send({ Deleted: req.params });
+	} catch (error) {
+		res.status(500).send({ message: "Something went wrong, check server logs" });
 	}
 };
