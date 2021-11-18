@@ -1,7 +1,7 @@
 ﻿# RESTapiIntro
 
 Before you can use this app you will need to run "npm i"  on your machine and add a .env file with your own connection string from a DB.
-'npm run dev' in terminal before calling endpoints
+'npm run dev' in terminal before calling endpoints in Insomnia/Postman
 
 ## urls:
 
