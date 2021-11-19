@@ -40,3 +40,14 @@ exports.deleteUser = async (req, res) => {
 		res.status(500).send({ message: "Something went wrong, check server logs" });
 	}
 };
+
+exports.updateUser = async (req, res) => {
+	try {
+		const { email, password, ...updateValues } = req.body;
+		const search = { email: email };
+		await User.findOneAndUpdate(search, updateValues);
+		res.status(200).send({ Updated: email });
+	} catch (error) {
+		res.status(500).send({ message: "Something went wrong, check server logs" });
+	}
+};
